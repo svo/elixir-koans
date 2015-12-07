@@ -56,6 +56,7 @@ defmodule Koans.About_testing do
     end
 
     def start_exUnit! do
+        ExUnit.start
         unless Koans.About_testing.exUnit_started? do
             Koans.meditate "you should start a ExUnit server to automatically run your test case"
         end
@@ -63,25 +64,5 @@ defmodule Koans.About_testing do
 
     def exUnit_started? do
         Process.whereis(ExUnit.Server)
-    end
-
-end
-
-defmodule FakeUnit.Case do
-    @doc false
-    defmacro __using__([]) do
-        quote do
-            import FakeUnit.Case
-        end
-    end
-    def test(_, _) do
-    end
-    def assert _ do
-    end
-    def assert _, _ do
-    end
-    def refute _ do
-    end
-    def assert_raise _, _, _ do
     end
 end
