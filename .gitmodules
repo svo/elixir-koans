@@ -1,0 +1,6 @@
+[submodule "environment-elixir"]
+	path = environment-elixir
+	url = https://github.com/svo/environment-elixir.git
+[submodule "environment-core"]
+	path = environment-core
+	url = https://github.com/svo/environment-core.git
