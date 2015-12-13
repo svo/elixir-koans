@@ -58,16 +58,16 @@ defmodule About_Tuples do
         assert tuple_size(quoted_block) == 3
     end
 
-    test "We can use tuples to define blocks" do
+    think "We can use tuples to define blocks" do
         # Note: unquote is the reverse of quote
         # It gives a block from its representation
-        unquoted_block = unquote {:"{}", [], [1, 2, 3]}
+        unquoted_block = quote do: unquote {:"{}", [], [1, 2, 3]}
         # Note: it's an hungarian notation
         # the atom :"{}" represent the function
         # the list [] contains metadatas like the line and module where code is defined
         # the list [1, 2, 3] are arguments passed to the function
         # For more infos see Macros and quote/unquote functions
-        assert unquoted_block == __?
+        assert unquoted_block == {:{}, [], [1, 2, 3]}
     end
 
     think "Are tuples enumerables ?" do
